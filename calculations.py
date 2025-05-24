@@ -1,7 +1,7 @@
 from models import ReadingStats
 from datetime import datetime, timedelta
 
-def calculate_stats(start_date: datetime, end_date: datetime, pages_read: int,
+def calculate_reading_stats(start_date: datetime, end_date: datetime, pages_read: int,
                     reading_days: int, total_pages: int) -> ReadingStats:
     
     days_passed: int = (end_date - start_date).days
