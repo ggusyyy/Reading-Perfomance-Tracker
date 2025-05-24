@@ -11,6 +11,6 @@ def get_date_input(prompt: str) -> datetime:
 def get_int_input(prompt: str) -> int:
     while True:
         try:
-            return int(input(prompt + ": "))
+            return int(input(f"{prompt}: "))
         except ValueError:
             print("Debes introducir sólo números.")
