@@ -6,11 +6,11 @@ from models import ReadingStats
 def main() -> None:
     test_mode = False
     
-    start_date = datetime.strptime("03-11-2024", "%d-%m-%Y")
-    end_date = datetime.strptime("17-05-2025", "%d-%m-%Y")
-    pages_read = 300
-    reading_days = 20
-    total_pages = 500
+    start_date: datetime = datetime.strptime("03-11-2024", "%d-%m-%Y")
+    end_date: datetime = datetime.strptime("17-05-2025", "%d-%m-%Y")
+    pages_read: int = 300
+    reading_days: int = 20
+    total_pages: int = 500
 
 
     if not test_mode:
