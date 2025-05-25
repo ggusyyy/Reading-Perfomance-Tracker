@@ -9,6 +9,13 @@ class ReadingStats:
     pages_remaining: int
     days_to_finish: float
     estimated_finish_date: datetime
+
+    
+@dataclass(frozen=True)
+class FinishPrediction:
+    pages_remaining: int
+    days_to_finish: float
+    estimated_finish_date: datetime
     
 @dataclass(frozen=True)
 class DateRange:
@@ -30,3 +37,10 @@ class ReadingInfo:
     pages_read: int
     reading_days: int
     total_pages: int
+
+@dataclass(frozen=True)
+class ReadingProgress:
+    date_range: DateRange
+    pages_per_day_total: float
+    total_pages: int
+    pages_read: int
