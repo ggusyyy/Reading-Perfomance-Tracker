@@ -20,6 +20,9 @@ class DateRange:
             raise ValueError(
                 f"La fecha inicial ({self.start}) es mayor a la fecha de hoy ({self.end})."
                 )
+    
+    def days_passed(self) -> int:
+        return (self.end - self.start).days
 
 @dataclass(frozen=True)
 class ReadingInfo:
