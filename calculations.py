@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 
 def calculate_reading_stats(reading_info: ReadingInfo) -> ReadingStats:
     
-    days_passed: int = (reading_info.date_range.end - reading_info.date_range.start).days
+    days_passed: int = reading_info.date_range.days_passed()
     months_passed: float = days_passed / 30.44
 
     days_per_month: float = reading_info.reading_days / months_passed
