@@ -34,14 +34,14 @@ def calculate_reading_stats(reading_info: ReadingInfo) -> ReadingStats:
 
 
 
-def calculate_finish_prediction(finish_prediction: ReadingProgress) -> FinishPrediction:
+def calculate_finish_prediction(reading_progress: ReadingProgress) -> FinishPrediction:
     
-    days_passed: int = finish_prediction.date_range.days_passed()
-    pages_per_day_total: float = finish_prediction.pages_read / days_passed
+    days_passed: int = reading_progress.date_range.days_passed()
+    pages_per_day_total: float = reading_progress.pages_read / days_passed
     
-    pages_remaining: int = finish_prediction.total_pages - finish_prediction.pages_read
+    pages_remaining: int = reading_progress.total_pages - reading_progress.pages_read
     days_to_finish: float = pages_remaining / pages_per_day_total
-    estimated_finish_date: datetime = finish_prediction.date_range.end + timedelta(days=days_to_finish)
+    estimated_finish_date: datetime = reading_progress.date_range.end + timedelta(days=days_to_finish)
     
     return FinishPrediction(
         pages_remaining,
